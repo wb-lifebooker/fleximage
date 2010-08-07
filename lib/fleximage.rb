@@ -3,14 +3,6 @@ require 'base64'
 require 'digest/sha1'
 require 'aws/s3'
 
-# Load RMagick
-begin
-  require 'RMagick'
-rescue MissingSourceFile => e
-  puts %{ERROR :: FlexImage requires the RMagick gem.  http://rmagick.rubyforge.org/install-faq.html}
-  raise e
-end
-
 # Apply a few RMagick patches
 require 'fleximage/rmagick_image_patch'
 
@@ -57,6 +49,5 @@ ActionController::Base.class_eval{ include Fleximage::AviaryController }
 
 # Register mime types
 Mime::Type.register_alias "image/pjpeg", :jpg # IE6 sends jpg data as "image/pjpeg".  Silly IE6.
-Mime::Type.register "image/jpeg", :jpg
 Mime::Type.register "image/gif", :gif
 Mime::Type.register "image/png", :png
