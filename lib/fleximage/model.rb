@@ -273,7 +273,7 @@ module Fleximage
         raise 'No image directory was defined, cannot generate path' unless directory
         
         # base directory
-        directory = "#{RAILS_ROOT}/#{directory}" unless /^\// =~ directory
+        directory = "#{Rails.root}/#{directory}" unless /^\// =~ directory
         
         # specific creation date based directory suffix.
         creation = self[:created_at] || self[:created_on]
@@ -421,13 +421,13 @@ module Fleximage
         self.image_file_string = Base64.decode64(data)
       end
 
-      # Sets the uploaded image to the name of a file in RAILS_ROOT/tmp that was just
+      # Sets the uploaded image to the name of a file in Rails.root/tmp that was just
       # uploaded.  Use as a hidden field in your forms to keep an uploaded image when
       # validation fails and the form needs to be redisplayed
       def image_file_temp=(file_name)
         if !@uploaded_image && file_name && file_name.present? && file_name !~ %r{\.\./}
           @image_file_temp = file_name
-          file_path = "#{RAILS_ROOT}/tmp/fleximage/#{file_name}"
+          file_path = "#{Rails.root}/tmp/fleximage/#{file_name}"
           
           @dont_save_temp = true
           if File.exists?(file_path)
@@ -663,7 +663,7 @@ module Fleximage
         def save_temp_image(file)
           file_name = file.respond_to?(:original_filename) ? file.original_filename : file.path
           @image_file_temp = Time.now.to_f.to_s.sub('.', '_')
-          path = "#{RAILS_ROOT}/tmp/fleximage"
+          path = "#{Rails.root}/tmp/fleximage"
           FileUtils.mkdir_p(path)
           File.open("#{path}/#{@image_file_temp}", 'wb') do |f|
             file.rewind
@@ -673,14 +673,14 @@ module Fleximage
         
         # Delete the temp image after its no longer needed
         def delete_temp_image
-          FileUtils.rm_rf "#{RAILS_ROOT}/tmp/fleximage/#{@image_file_temp}"
+          FileUtils.rm_rf "#{Rails.root}/tmp/fleximage/#{@image_file_temp}"
         end
         
         # Load the default image, or raise an expection
         def master_image_not_found
           # Load the default image from a path
           if self.class.default_image_path
-            @output_image = Magick::Image.read("#{RAILS_ROOT}/#{self.class.default_image_path}").first
+            @output_image = Magick::Image.read("#{Rails.root}/#{self.class.default_image_path}").first
           
           # Or create a default image
           elsif self.class.default_image
