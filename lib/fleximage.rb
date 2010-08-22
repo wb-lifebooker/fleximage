@@ -3,6 +3,8 @@ require 'base64'
 require 'digest/sha1'
 require 'aws/s3'
 
+require 'RMagick' unless defined?(Magick)
+
 # Apply a few RMagick patches
 require 'fleximage/rmagick_image_patch'
 
