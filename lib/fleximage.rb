@@ -51,5 +51,6 @@ ActionController::Base.class_eval{ include Fleximage::AviaryController }
 
 # Register mime types
 Mime::Type.register_alias "image/pjpeg", :jpg # IE6 sends jpg data as "image/pjpeg".  Silly IE6.
+Mime::Type.register "image/jpeg", :jpg
 Mime::Type.register "image/gif", :gif
 Mime::Type.register "image/png", :png
