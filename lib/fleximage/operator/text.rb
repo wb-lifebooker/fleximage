@@ -12,7 +12,7 @@ module Fleximage
     # * antialias: true or false
     # * color: string or <tt>color(r, g, b)</tt>
     # * font_size: integer
-    # * font: path to a font file relative to +RAILS_ROOT+
+    # * font: path to a font file relative to +Rails.root+
     # * rotate: degrees as an integer
     # * shadow: <tt>{:blur => 1, :opacity => 1.0}</tt>
     # * font_weight: RMagick font weight constant or value. See: http://www.imagemagick.org/RMagick/doc/draw.html#font_weight
@@ -75,7 +75,7 @@ module Fleximage
         # assign font path with to rails root unless the path is absolute
         if options[:font]
           font = options[:font]
-          font = "#{RAILS_ROOT}/#{font}" unless font =~ %r{^(~?|[A-Za-z]:)/}
+          font = "#{Rails.root}/#{font}" unless font =~ %r{^(~?|[A-Za-z]:)/}
           text.font = font
         end
 
