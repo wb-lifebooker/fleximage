@@ -470,7 +470,7 @@ module Fleximage
       #     image.resize '320x240'
       #   end
       def operate(&block)
-        returning self do
+        self.tap do
           proxy = ImageProxy.new(load_image, self)
           block.call(proxy)
           @output_image = proxy.image
