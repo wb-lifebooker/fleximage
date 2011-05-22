@@ -26,8 +26,8 @@ namespace :fleximage do
         creation = obj[:created_at] || obj[:created_on]
         
         # Generate both types of file paths
-        flat_path   = "#{RAILS_ROOT}/#{model_class.image_directory}/#{obj.id}.#{model_class.image_storage_format}"
-        nested_path = "#{RAILS_ROOT}/#{model_class.image_directory}/#{creation.year}/#{creation.month}/#{creation.day}/#{obj.id}.#{model_class.image_storage_format}" 
+        flat_path   = "#{Rails.root}/#{model_class.image_directory}/#{obj.id}.#{model_class.image_storage_format}"
+        nested_path = "#{Rails.root}/#{model_class.image_directory}/#{creation.year}/#{creation.month}/#{creation.day}/#{obj.id}.#{model_class.image_storage_format}" 
         
         # Assign old path and new path based on desired directory format
         if to_format == :nested
