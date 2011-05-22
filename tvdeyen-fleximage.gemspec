@@ -24,7 +24,6 @@ super easy.
     "Rakefile",
     "VERSION",
     "autotest.rb",
-    "fleximage.gemspec",
     "init.rb",
     "lib/dsl_accessor.rb",
     "lib/fleximage.rb",
@@ -152,7 +151,8 @@ super easy.
     "test/unit/preprocess_image_option_test.rb",
     "test/unit/require_image_option_test.rb",
     "test/unit/temp_image_test.rb",
-    "test/unit/use_creation_date_based_directories_option_test.rb"
+    "test/unit/use_creation_date_based_directories_option_test.rb",
+    "tvdeyen-fleximage.gemspec"
   ]
   s.homepage = %q{http://github.com/tvdeyen/fleximage}
   s.require_paths = ["lib"]
