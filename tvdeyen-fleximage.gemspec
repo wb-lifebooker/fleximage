@@ -4,12 +4,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{fleximage}
-  s.version = "1.0.4.1"
+  s.name = %q{tvdeyen-fleximage}
+  s.version = "1.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Ahmed Adam", "Alex Wayne", "Andrew White", "Duccio", "JJ Buckley", "Jason Lee", "Joshua Abbott", "Koji Ando", "Kouhei Sutou", "Lasse Jansen", "Lo\303\257c Guitaut", "Martin Vielsmaier", "Squeegy", "Thomas von Deyen", "Vannoy", "Wolfgang K\303\266lbl", "josei", "ralph"]
-  s.date = %q{2010-12-09}
+  s.authors = ["Ahmed Adam", "Alex Wayne", "Andrew White", "Duccio", "Heiner Wohner", "JJ Buckley", "Jason Lee", "Joshua Abbott", "Koji Ando", "Kouhei Sutou", "Lasse Jansen", "Loïc Guitaut", "Martin Vielsmaier", "Squeegy", "Thomas von Deyen", "Vannoy", "Wolfgang Klinger", "Wolfgang Kölbl", "josei", "ralph"]
+  s.date = %q{2011-05-22}
   s.description = %q{Fleximage is a Rails plugin that tries to make image uploading and rendering
 super easy.
 }
@@ -156,72 +156,10 @@ super easy.
   ]
   s.homepage = %q{http://github.com/tvdeyen/fleximage}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Rails plugin for uploading images as resources, with support for resizing, text stamping, and other special effects.}
-  s.test_files = [
-    "test/mock_file.rb",
-    "test/rails_root/app/controllers/application.rb",
-    "test/rails_root/app/controllers/avatars_controller.rb",
-    "test/rails_root/app/controllers/photo_bares_controller.rb",
-    "test/rails_root/app/controllers/photo_dbs_controller.rb",
-    "test/rails_root/app/controllers/photo_files_controller.rb",
-    "test/rails_root/app/helpers/application_helper.rb",
-    "test/rails_root/app/helpers/avatars_helper.rb",
-    "test/rails_root/app/helpers/photo_bares_helper.rb",
-    "test/rails_root/app/helpers/photo_dbs_helper.rb",
-    "test/rails_root/app/helpers/photo_files_helper.rb",
-    "test/rails_root/app/models/abstract.rb",
-    "test/rails_root/app/models/avatar.rb",
-    "test/rails_root/app/models/photo_bare.rb",
-    "test/rails_root/app/models/photo_custom_error.rb",
-    "test/rails_root/app/models/photo_db.rb",
-    "test/rails_root/app/models/photo_file.rb",
-    "test/rails_root/app/models/photo_s3.rb",
-    "test/rails_root/config/boot.rb",
-    "test/rails_root/config/environment.rb",
-    "test/rails_root/config/environments/development.rb",
-    "test/rails_root/config/environments/production.rb",
-    "test/rails_root/config/environments/sqlite3.rb",
-    "test/rails_root/config/environments/test.rb",
-    "test/rails_root/config/initializers/inflections.rb",
-    "test/rails_root/config/initializers/load_translations.rb",
-    "test/rails_root/config/initializers/mime_types.rb",
-    "test/rails_root/config/routes.rb",
-    "test/rails_root/db/migrate/001_create_photo_files.rb",
-    "test/rails_root/db/migrate/002_create_photo_dbs.rb",
-    "test/rails_root/db/migrate/003_create_photo_bares.rb",
-    "test/rails_root/db/migrate/004_create_avatars.rb",
-    "test/rails_root/db/migrate/005_create_photo_s3s.rb",
-    "test/rails_root/public/dispatch.rb",
-    "test/rails_root/vendor/plugins/fleximage/init.rb",
-    "test/s3_stubs.rb",
-    "test/test_helper.rb",
-    "test/unit/abstract_test.rb",
-    "test/unit/basic_model_test.rb",
-    "test/unit/blank_test.rb",
-    "test/unit/default_image_path_option_test.rb",
-    "test/unit/dsl_accessor_test.rb",
-    "test/unit/file_upload_from_local_test.rb",
-    "test/unit/file_upload_from_strings_test.rb",
-    "test/unit/file_upload_from_url_test.rb",
-    "test/unit/file_upload_to_db_test.rb",
-    "test/unit/has_store_test.rb",
-    "test/unit/i18n_messages_test.rb",
-    "test/unit/image_directory_option_test.rb",
-    "test/unit/image_proxy_test.rb",
-    "test/unit/image_storage_format_option_test.rb",
-    "test/unit/magic_columns_test.rb",
-    "test/unit/minimum_image_size_test.rb",
-    "test/unit/operator_base_test.rb",
-    "test/unit/operator_resize_test.rb",
-    "test/unit/preprocess_image_option_test.rb",
-    "test/unit/require_image_option_test.rb",
-    "test/unit/temp_image_test.rb",
-    "test/unit/use_creation_date_based_directories_option_test.rb"
-  ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
