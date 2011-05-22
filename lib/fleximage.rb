@@ -21,6 +21,9 @@ end
 require 'fleximage/model'
 ActiveRecord::Base.class_eval { include Fleximage::Model }
 
+# Image Creation
+require 'fleximage/blank'
+
 # Image Proxy
 require 'fleximage/image_proxy'
 
