@@ -26,7 +26,7 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "fleximage"
+    gem.name = "tvdeyen-fleximage"
     gem.summary = <<EOF
 Rails plugin for uploading images as resources, with support for resizing, text
 stamping, and other special effects.
