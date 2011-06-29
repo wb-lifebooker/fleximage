@@ -335,8 +335,8 @@ module Fleximage
       def image_file=(file)
         if self.class.image_file_exists(file)
           
-          file_path=file.tempfile.path  if file.is_a?( ActionDispatch::Http::UploadedFile ) 
           file_path=file.path unless file.is_a? StringIO
+          file_path=file.tempfile.path  if file.is_a?( ActionDispatch::Http::UploadedFile ) 
 
           # Create RMagick Image object from uploaded file
           if file_path
@@ -664,7 +664,8 @@ module Fleximage
         
         # Save the image in the rails tmp directory
         def save_temp_image(file)
-          file_name = file.respond_to?(:original_filename) ? file.original_filename : file.path
+          file_name=file.path unless file.is_a? StringIO
+          file_name =  file.original_filename if file.respond_to?(:original_filename)  
           @image_file_temp = Time.now.to_f.to_s.sub('.', '_')
           path = "#{Rails.root}/tmp/fleximage"
           FileUtils.mkdir_p(path)
