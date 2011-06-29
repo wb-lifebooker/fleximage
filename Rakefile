@@ -26,7 +26,7 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "fleximage"
+    gem.name = "tvdeyen-fleximage"
     gem.summary = <<EOF
 Rails plugin for uploading images as resources, with support for resizing, text
 stamping, and other special effects.
@@ -35,12 +35,12 @@ EOF
 Fleximage is a Rails plugin that tries to make image uploading and rendering
 super easy.
 EOF
-    gem.email = "ruby@beautifulpixel.com"
-    gem.homepage = "http://github.com/Squeegy/fleximage"
+    gem.email = "tvdeyen@gmail.com"
+    gem.homepage = "http://github.com/tvdeyen/fleximage"
     gem.authors = `git log --pretty=format:"%an"`.split("\n").uniq.sort
     gem.add_dependency "rmagick"
     gem.add_dependency "aws-s3"
-    gem.add_development_dependency "rails", "=2.2.2"
+    gem.add_development_dependency "rails", ">=3.0.0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

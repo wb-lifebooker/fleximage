@@ -335,9 +335,11 @@ module Fleximage
       def image_file=(file)
         if self.class.image_file_exists(file)
           
+          file_path = file.is_a?( ActionDispatch::Http::UploadedFile ) ? file.tempfile.path : file.path
+
           # Create RMagick Image object from uploaded file
-          if file.path
-            @uploaded_image = Magick::Image.read(file.path).first
+          if file_path
+            @uploaded_image = Magick::Image.read(file_path).first
           else
             @uploaded_image = Magick::Image.from_blob(file.read).first
           end

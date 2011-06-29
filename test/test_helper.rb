@@ -7,7 +7,7 @@ require 'test_help'
 silence_warnings { RAILS_ENV = ENV['RAILS_ENV'] }
  
 # Run the migrations
-ActiveRecord::Migrator.migrate("#{RAILS_ROOT}/db/migrate")
+ActiveRecord::Migrator.migrate("#{Rails.root}/db/migrate")
  
 # Setup the fixtures path
 Test::Unit::TestCase.fixture_path = File.dirname(__FILE__) + "/fixtures/"
@@ -38,28 +38,28 @@ class Test::Unit::TestCase #:nodoc:
   def files(name)
     case name
     when :photo
-      MockFile.new("#{RAILS_ROOT}/../fixtures/photo.jpg")
+      MockFile.new("#{Rails.root}/../fixtures/photo.jpg")
       
     when :not_a_photo
-      MockFile.new("#{RAILS_ROOT}/../fixtures/not_a_photo.xml")
+      MockFile.new("#{Rails.root}/../fixtures/not_a_photo.xml")
     
     when :web_photo
       'http://www.google.com/intl/en_ALL/images/logo.gif'
     
     when :cmyk
-      MockFile.new("#{RAILS_ROOT}/../fixtures/cmyk.jpg")
+      MockFile.new("#{Rails.root}/../fixtures/cmyk.jpg")
     
     when :i100x100
-      MockFile.new("#{RAILS_ROOT}/../fixtures/100x100.jpg")
+      MockFile.new("#{Rails.root}/../fixtures/100x100.jpg")
       
     when :i1x100
-      MockFile.new("#{RAILS_ROOT}/../fixtures/1x100.jpg")
+      MockFile.new("#{Rails.root}/../fixtures/1x100.jpg")
       
     when :i100x1
-      MockFile.new("#{RAILS_ROOT}/../fixtures/100x1.jpg")
+      MockFile.new("#{Rails.root}/../fixtures/100x1.jpg")
       
     when :i1x1
-      MockFile.new("#{RAILS_ROOT}/../fixtures/1x1.jpg")
+      MockFile.new("#{Rails.root}/../fixtures/1x1.jpg")
     
     end
   end
