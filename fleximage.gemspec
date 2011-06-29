@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fleximage}
-  s.version = "1.0.5"
+  s.version = "1.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ahmed Adam", "Alex Wayne", "Andrew White", "Duccio", "Fernando Kosh", "Heiner Wohner", "JJ Buckley", "Jason Lee", "Joshua Abbott", "Koji Ando", "Kouhei Sutou", "Lasse Jansen", "Loïc Guitaut", "Martin Vielsmaier", "Squeegy", "Thomas von Deyen", "Vannoy", "Wolfgang Klinger", "Wolfgang Kölbl", "josei", "ralph"]
@@ -24,6 +24,7 @@ super easy.
     "Rakefile",
     "VERSION",
     "autotest.rb",
+    "fleximage.gemspec",
     "init.rb",
     "lib/dsl_accessor.rb",
     "lib/fleximage.rb",
@@ -151,8 +152,7 @@ super easy.
     "test/unit/preprocess_image_option_test.rb",
     "test/unit/require_image_option_test.rb",
     "test/unit/temp_image_test.rb",
-    "test/unit/use_creation_date_based_directories_option_test.rb",
-    "tvdeyen-fleximage.gemspec"
+    "test/unit/use_creation_date_based_directories_option_test.rb"
   ]
   s.homepage = %q{http://github.com/hewo/fleximage}
   s.require_paths = ["lib"]

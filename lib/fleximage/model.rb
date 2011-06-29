@@ -335,7 +335,8 @@ module Fleximage
       def image_file=(file)
         if self.class.image_file_exists(file)
           
-          file_path = file.is_a?( ActionDispatch::Http::UploadedFile ) ? file.tempfile.path : file.path
+          file_path=file.tempfile.path  if file.is_a?( ActionDispatch::Http::UploadedFile ) 
+          file_path=file.path unless file.is_a? StringIO
 
           # Create RMagick Image object from uploaded file
           if file_path
