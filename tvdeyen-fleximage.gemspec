@@ -4,16 +4,16 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{fleximage}
+  s.name = %q{tvdeyen-fleximage}
   s.version = "1.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Ahmed Adam", "Alex Wayne", "Andrew White", "Duccio", "Fernando Kosh", "Heiner Wohner", "JJ Buckley", "Jason Lee", "Joshua Abbott", "Koji Ando", "Kouhei Sutou", "Lasse Jansen", "Loïc Guitaut", "Martin Vielsmaier", "Squeegy", "Thomas von Deyen", "Vannoy", "Wolfgang Klinger", "Wolfgang Kölbl", "josei", "ralph"]
-  s.date = %q{2011-06-29}
+  s.authors = ["Ahmed Adam", "Alex Wayne", "Andrew White", "Duccio", "Fernando Kosh", "Heiner Wohner", "JJ Buckley", "Jason Lee", "Joshua Abbott", "Koji Ando", "Kouhei Sutou", "Lasse Jansen", "Lo\303\257c Guitaut", "Martin Vielsmaier", "Squeegy", "Thomas von Deyen", "Vannoy", "Wolfgang Klinger", "Wolfgang K\303\266lbl", "josei", "ralph"]
+  s.date = %q{2011-09-08}
   s.description = %q{Fleximage is a Rails plugin that tries to make image uploading and rendering
 super easy.
 }
-  s.email = %q{ihewo@gmail.com}
+  s.email = %q{tvdeyen@gmail.com}
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -24,7 +24,6 @@ super easy.
     "Rakefile",
     "VERSION",
     "autotest.rb",
-    "fleximage.gemspec",
     "init.rb",
     "lib/dsl_accessor.rb",
     "lib/fleximage.rb",
@@ -152,11 +151,12 @@ super easy.
     "test/unit/preprocess_image_option_test.rb",
     "test/unit/require_image_option_test.rb",
     "test/unit/temp_image_test.rb",
-    "test/unit/use_creation_date_based_directories_option_test.rb"
+    "test/unit/use_creation_date_based_directories_option_test.rb",
+    "tvdeyen-fleximage.gemspec"
   ]
-  s.homepage = %q{http://github.com/hewo/fleximage}
+  s.homepage = %q{http://github.com/tvdeyen/fleximage}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.0}
+  s.rubygems_version = %q{1.7.2}
   s.summary = %q{Rails plugin for uploading images as resources, with support for resizing, text stamping, and other special effects.}
 
   if s.respond_to? :specification_version then
