@@ -33,7 +33,7 @@ if defined?(ActionView::Template)
   # Rails >= 2.1
   if Rails.version.to_f >= 3 
     require 'fleximage/rails3_view'
-    ActionView::Template.register_template_handler :flexi, ActionView::TemplateHandlers::Rails3View
+    ActionView::Template.register_template_handler :flexi, Fleximage::Rails3View
   else
     require 'fleximage/view'
     ActionView::Template.register_template_handler :flexi, Fleximage::View
