@@ -163,7 +163,6 @@ super easy.
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      #s.add_runtime_dependency(%q<rmagick>, [">= 0"])
       if(RUBY_ENGINE == 'jruby')
         s.add_runtime_dependency(%q<rmagick4j>, [">= 0"])
       else
