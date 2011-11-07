@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "tvdeyen-fleximage"
-  s.version = "1.0.8"
+  s.version = "1.0.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ahmed Adam", "Alex Wayne", "Andrew White", "Carsten Fregin", "Duccio", "Fernando Kosh", "Heiner Wohner", "JJ Buckley", "Jason Lee", "Joshua Abbott", "Koji Ando", "Kouhei Sutou", "Lasse Jansen", "Lo\u{ef}c Guitaut", "Martin Vielsmaier", "Squeegy", "Thomas von Deyen", "Vannoy", "Wolfgang Klinger", "Wolfgang K\u{f6}lbl", "josei", "masche842", "ralph"]
