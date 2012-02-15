@@ -2,21 +2,21 @@ require File.dirname(__FILE__) + '/../../test/test_helper'
 
 
 class BigPhoto < ActiveRecord::Base
-  set_table_name :photo_dbs
+  self.table_name = :photo_dbs
   acts_as_fleximage do
     validates_image_size '80x60'
   end
 end
 
 class WidePhoto < ActiveRecord::Base
-  set_table_name :photo_dbs
+  self.table_name = :photo_dbs
   acts_as_fleximage do
     validates_image_size '80x0'
   end
 end
 
 class HighPhoto < ActiveRecord::Base
-  set_table_name :photo_dbs
+  self.table_name = :photo_dbs
   acts_as_fleximage do
     validates_image_size '0x60'
   end

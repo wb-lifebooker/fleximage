@@ -1,5 +1,5 @@
 class PhotoCustomError < ActiveRecord::Base
-  set_table_name :photo_dbs
+  self.table_name = :photo_dbs
   acts_as_fleximage do
     image_directory 'public/uploads'
     validates_image_size '2x2'
