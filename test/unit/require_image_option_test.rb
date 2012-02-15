@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../../test/test_helper'
 
 class ValidatedPhoto < ActiveRecord::Base
-  set_table_name :photo_dbs
+  self.table_name = :photo_dbs
   acts_as_fleximage
   
   def validate

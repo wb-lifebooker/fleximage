@@ -1,5 +1,5 @@
 class Abstract < ActiveRecord::Base
-  set_table_name :photo_dbs
+  self.table_name = :photo_dbs
   
   acts_as_fleximage do
     require_image false
