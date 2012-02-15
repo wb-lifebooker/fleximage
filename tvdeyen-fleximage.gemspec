@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "tvdeyen-fleximage"
-  s.version = "1.0.9"
+  s.version = "1.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Ahmed Adam", "Alex Wayne", "Andrew White", "Carsten Fregin", "Duccio", "Fernando Kosh", "Heiner Wohner", "JJ Buckley", "Jason Lee", "Joshua Abbott", "Koji Ando", "Kouhei Sutou", "Lasse Jansen", "Lo\u{ef}c Guitaut", "Martin Vielsmaier", "Squeegy", "Thomas von Deyen", "Vannoy", "Wolfgang Klinger", "Wolfgang K\u{f6}lbl", "josei", "masche842", "ralph"]
-  s.date = "2011-11-07"
+  s.authors = ["Ahmed Adam", "Alex Wayne", "Andrew White", "Carsten Fregin", "Duccio", "Fernando Kosh", "Heiner Wohner", "JJ Buckley", "Jason Lee", "Joshua Abbott", "Koji Ando", "Kouhei Sutou", "Lasse Jansen", "Lo\u{ef}c Guitaut", "Markus Schwed", "Martin Vielsmaier", "Squeegy", "Thomas von Deyen", "Vannoy", "Wolfgang Klinger", "Wolfgang K\u{f6}lbl", "josei", "masche842", "ralph"]
+  s.date = "2012-02-15"
   s.description = "Fleximage is a Rails plugin that tries to make image uploading and rendering\nsuper easy.\n"
   s.email = "tvdeyen@gmail.com"
   s.extra_rdoc_files = [
@@ -53,7 +53,6 @@ Gem::Specification.new do |s|
     "test/fixtures/not_a_photo.xml",
     "test/fixtures/photo.jpg",
     "test/mock_file.rb",
-    "test/rails_root/app/controllers/application.rb",
     "test/rails_root/app/controllers/avatars_controller.rb",
     "test/rails_root/app/controllers/photo_bares_controller.rb",
     "test/rails_root/app/controllers/photo_dbs_controller.rb",
@@ -71,7 +70,6 @@ Gem::Specification.new do |s|
     "test/rails_root/app/models/photo_custom_error.rb",
     "test/rails_root/app/models/photo_db.rb",
     "test/rails_root/app/models/photo_file.rb",
-    "test/rails_root/app/models/photo_s3.rb",
     "test/rails_root/app/views/avatars/edit.html.erb",
     "test/rails_root/app/views/avatars/index.html.erb",
     "test/rails_root/app/views/avatars/new.html.erb",
@@ -107,7 +105,6 @@ Gem::Specification.new do |s|
     "test/rails_root/db/migrate/002_create_photo_dbs.rb",
     "test/rails_root/db/migrate/003_create_photo_bares.rb",
     "test/rails_root/db/migrate/004_create_avatars.rb",
-    "test/rails_root/db/migrate/005_create_photo_s3s.rb",
     "test/rails_root/public/.htaccess",
     "test/rails_root/public/404.html",
     "test/rails_root/public/422.html",
@@ -126,7 +123,6 @@ Gem::Specification.new do |s|
     "test/rails_root/public/robots.txt",
     "test/rails_root/public/stylesheets/scaffold.css",
     "test/rails_root/vendor/plugins/fleximage/init.rb",
-    "test/s3_stubs.rb",
     "test/test_helper.rb",
     "test/unit/abstract_test.rb",
     "test/unit/basic_model_test.rb",
@@ -154,24 +150,24 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/tvdeyen/fleximage"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.11"
+  s.rubygems_version = "1.8.10"
   s.summary = "Rails plugin for uploading images as resources, with support for resizing, text stamping, and other special effects."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<tvdeyen-fleximage>, [">= 0"])
       s.add_runtime_dependency(%q<rmagick>, [">= 0"])
-      s.add_runtime_dependency(%q<aws-s3>, [">= 0"])
       s.add_development_dependency(%q<rails>, [">= 3.0.0"])
     else
+      s.add_dependency(%q<tvdeyen-fleximage>, [">= 0"])
       s.add_dependency(%q<rmagick>, [">= 0"])
-      s.add_dependency(%q<aws-s3>, [">= 0"])
       s.add_dependency(%q<rails>, [">= 3.0.0"])
     end
   else
+    s.add_dependency(%q<tvdeyen-fleximage>, [">= 0"])
     s.add_dependency(%q<rmagick>, [">= 0"])
-    s.add_dependency(%q<aws-s3>, [">= 0"])
     s.add_dependency(%q<rails>, [">= 3.0.0"])
   end
 end
