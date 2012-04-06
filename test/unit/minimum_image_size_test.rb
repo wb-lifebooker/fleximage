@@ -26,7 +26,7 @@ class MinimumImageSizeTest < Test::Unit::TestCase
   def test_should_not_save_small_image
     p = BigPhoto.new(:image_file => files(:i1x1))
     assert !p.save
-    assert p.errors["image_file"].match(/is too small/)
+    assert p.errors["image_file"].join().match(/is too small/)
   end
   
   def test_should_save_big_image
@@ -51,6 +51,6 @@ class MinimumImageSizeTest < Test::Unit::TestCase
   def test_should_include_minimum_dimensions_in_message
     p = BigPhoto.new(:image_file => files(:i1x1))
     p.save
-    assert_equal "is too small (Minimum: 80x60)", p.errors["image_file"]
+    assert_equal "is too small (Minimum: 80x60)", p.errors["image_file"].join()
   end
 end
