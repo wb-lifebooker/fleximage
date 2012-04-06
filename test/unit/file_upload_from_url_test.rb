@@ -12,7 +12,7 @@ class FleximageFileUploadFromUrlTest < Test::Unit::TestCase
     p = PhotoBare.new(:image_file_url => 'http://www.google.com/')
     assert !p.save, 'Record expected to be invalid after upload via URL'
     assert_equal 1, p.errors.size
-    assert_equal 'was not a readable image', p.errors.on(:image_file_url)
+    assert_equal 'was not a readable image', p.errors.messages[:image_file_url].join()
   rescue SocketError
     print '!'
   end
@@ -21,7 +21,7 @@ class FleximageFileUploadFromUrlTest < Test::Unit::TestCase
     p = PhotoBare.new(:image_file_url => 'foo')
     assert !p.save, 'Record expected to be invalid after upload via URL'
     assert_equal 1, p.errors.size
-    assert_equal 'was not a readable image', p.errors.on(:image_file_url)
+    assert_equal 'was not a readable image', p.errors.messages[:image_file_url].join()
   rescue SocketError
     print '!'
   end

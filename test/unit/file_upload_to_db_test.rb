@@ -14,14 +14,14 @@ class FleximageFileUploadToDbTest < Test::Unit::TestCase
     p = PhotoDb.new
     assert !p.save, 'Record expected to not be allowed to save'
     assert_equal 1, p.errors.size
-    assert_equal 'is required', p.errors.on(:image_file)
+    assert_equal 'is required', p.errors.messages[:image_file].join()
   end
   
   def test_should_require_an_valid_image
     p = PhotoDb.new(:image_file => files(:not_a_photo))
     assert !p.save, 'Record expected to not be allowed to save'
     assert_equal 1, p.errors.size
-    assert_equal 'was not a readable image', p.errors.on(:image_file)
+    assert_equal 'was not a readable image', p.errors.messages[:image_file].join()
   end
   
   def test_should_retrieve_a_stored_image
