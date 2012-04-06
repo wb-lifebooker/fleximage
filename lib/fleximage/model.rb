@@ -119,7 +119,7 @@ module Fleximage
         # Put uploads from different days into different subdirectories
         dsl_accessor :use_creation_date_based_directories, :default => true
         
-        # The format are master images are stored in
+        # The format that master images are stored in
         dsl_accessor :image_storage_format, :default => Proc.new { :png }
         
         # Require a valid image.  Defaults to true.  Set to false if its ok to have no image for
@@ -166,13 +166,13 @@ module Fleximage
         # Image too small message
         # Should include {{minimum}}
         def self.image_too_small_message(str = nil)
-          fb = "is too small (Minimum: {{minimum}})"
+          fb = "is too small (Minimum: %{minimum})"
           if str.nil?
             minimum_size = Fleximage::Operator::Base.size_to_xy(validates_image_size).join('x')
             if @image_too_small_message
-              @image_too_small_message.gsub("{{minimum}}", minimum_size)
+              @image_too_small_message.gsub("%{minimum}", minimum_size)
             else
-              translate_error_message("image_too_small", fb.gsub("{{minimum}}", minimum_size), :minimum => minimum_size)
+              translate_error_message("image_too_small", fb.gsub("%{minimum}", minimum_size), :minimum => minimum_size)
             end
           else
             @image_too_small_message = str
