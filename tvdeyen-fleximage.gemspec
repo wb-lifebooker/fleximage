@@ -21,5 +21,6 @@ Gem::Specification.new do |s|
   s.summary = "Rails plugin for uploading images as resources, with support for resizing, text stamping, and other special effects."
 
   s.add_runtime_dependency(%q<rmagick>, [">= 2"])
+  s.add_runtime_dependency(%q<dsl_accessor>, ["~> 0.4.0"])
   s.add_development_dependency(%q<rails>, ["~> 3.2.1"])
 end
