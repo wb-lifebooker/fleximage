@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version = Fleximage::VERSION
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = `git log --format='%aN' | sort -u`.split("\n")
+  s.authors = "people" # Fix invalid byte encoding `git log --format='%aN' | sort -u`.split("\n")
   s.date = "2012-04-06"
   s.description = "Fleximage is a Rails plugin that tries to make image uploading and rendering\nsuper easy.\n"
   s.email = "tvdeyen@gmail.com"
